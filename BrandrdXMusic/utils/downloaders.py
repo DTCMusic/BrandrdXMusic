@@ -1,6 +1,10 @@
 import os
 from yt_dlp import YoutubeDL
 
+def cookie_txt_file() -> str:
+    # Sabit cookie fayl yolunu qaytarır
+    return "cookies/BrandedXMusic.txt"
+
 ydl_opts = {
     "format": "bestaudio/best",
     "outtmpl": "downloads/%(id)s.%(ext)s",
@@ -16,6 +20,7 @@ ydl_opts = {
             "preferredquality": "320",
         }
     ],
+    "cookiefile": cookie_txt_file(),  # burda cookie faylı əlavə edilir
 }
 ydl = YoutubeDL(ydl_opts)
 
